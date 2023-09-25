@@ -2,7 +2,11 @@ package org.java.lessons;
 
 import org.java.lessons.gestore.Concerto;
 import org.java.lessons.gestore.Evento;
+import org.java.lessons.gestore.ProgrammaEventi;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -111,5 +115,34 @@ public class Main {
 		/**
 		 * Milestone 4
 		 */
+		
+		List<Evento> concerti = new ArrayList<Evento>();
+		
+		try {
+			concerti.add(new Evento("jimmy e i ricordy", "12-12-2023", 43));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			concerti.add(new Evento("nipoti di jimmy", "12-12-2028", 43));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			concerti.add(new Evento("i ricordi di jimmy", "12-12-2025", 43));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		ProgrammaEventi jimmyTour = new ProgrammaEventi("JimmyTour fest", concerti);
+		
+		System.out.println(jimmyTour.getListaOrdinata());
+		System.out.println(jimmyTour.searchByDate("12-12-2028"));
+		
 	}
 }
+
