@@ -28,6 +28,11 @@ public class Evento {
 	public LocalDate getDataEvento() {
 		return dataEvento;
 	}
+	
+	public String getDataFormatted()
+	{
+		return getDataEvento().format(formatter);
+	}
 
 	public void setData(String data) throws Exception {
 		
@@ -97,7 +102,7 @@ public class Evento {
 	public String toString() {
 		
 		
-		return "Data: " + getDataEvento().format(formatter) + " - Titolo: " + getTitolo();
+		return "Data: " + getDataFormatted() + " - Titolo: " + getTitolo();
 	}
 	
 	
